@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f1115;        
+  color: #e6e6e6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.clock {
+  font-size: 4rem;
+  color: #dcdcdc;
+  margin-bottom: 1rem;
+}
+
+.weather {
+  text-align: center;
+}
+
+.temp {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.condition {
+  font-size: 1.5rem;
+  color: #9aa0a6;
+}
