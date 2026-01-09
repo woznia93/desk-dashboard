@@ -21,4 +21,82 @@ The dashboard consists of:
 ---
 
 ## Folder Structure
+desk-dashboard/
+├─ backend/
+│ └─ main.py # FastAPI backend
+├─ frontend/
+│ ├─ index.html # Main HTML page
+│ ├─ app.js # JS for fetching data and updating DOM
+│ └─ styles.css # Dark theme styling
+├─ README.md
+└─ requirements.txt
+
+---
+
+## Prerequisites
+
+- Raspberry Pi 3 or newer  
+- Raspberry Pi OS (32-bit recommended)  
+- Python 3.7+  
+- Chromium browser or Epiphany browser  
+- OpenWeatherMap API key ([Get one here](https://openweathermap.org/api))  
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/desk-dashboard.git
+cd desk-dashboard
+```
+
+### 2. Setup Python virtual enviroment for backend
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r backend/requirements.txt
+```
+
+### 3. Set your OpenWeatherMap API key
+
+```bash
+export OPENWEATHER_API_KEY=YOUR_API_KEY
+```
+
+### 4. Start Backend 
+
+```bash
+cd backend
+python -m uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+Can verify with:
+```bash
+curl http://127.0.0.1:8000/weather
+```
+
+### 5. Start Frontend
+
+```bash
+cd ../frontend
+python3 -m http.server 3000
+```
+
+View With: 
+```bash
+http://127.0.0.1:3000/index.html
+```
+
+### 6. Launch in Kiosk Mode
+
+```bashchromium-browser http://127.0.0.1:3000/index.html \
+  --incognito --start-fullscreen --disable-gpu --disable-software-rasterizer \
+  --noerrdialogs --disable-infobars
+```
+
+
 
