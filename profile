@@ -1,0 +1,1 @@
+export WEATHER_API_KEY=ecb7c2c4f37875eae914a590ea4af0b3

@@ -5,7 +5,8 @@
 }
 
 body {
-  background: #0f1115;        
+  background: #0f1115;
+  margin: 0;        
   color: #e6e6e6;
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   width: 100vw;
@@ -22,7 +23,7 @@ body {
 }
 
 .clock {
-  font-size: 4rem;
+  font-size: 10vw;
   color: #dcdcdc;
   margin-bottom: 1rem;
 }
@@ -32,11 +33,11 @@ body {
 }
 
 .temp {
-  font-size: 6rem;
+  font-size: 15vw;
   font-weight: bold;
 }
 
 .condition {
-  font-size: 1.5rem;
+  font-size: 4vw;
   color: #9aa0a6;
 }

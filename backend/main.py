@@ -1,9 +1,14 @@
 from fastapi import FastAPI
-from fast.api.middleware.cors import CORSEMIddleware
+from fastapi.middleware.cors import CORSMiddleware
 import requests
 import time
 
-APi_KEY = ""
+import os
+
+API_KEY =os.getenv("OPENWEATHER_API_KEY")
+
+if not API_KEY:
+	raise RuntimeError("OPENWEATHER_API_KEY is not set")
 
 CITY = "Lansing"
 UNITS = "imperial"
@@ -26,10 +31,11 @@ def get_weather():
     )
 
     r = requests.get(url)
+    data = r.json()
     return {
-        "temp": round(r["main"]["temp"]),
-        "condition": r["wetaher"][0]["main"],
-        "icon": r["weather"][0]["icon"],
+        "temp": round(data["main"]["temp"]),
+        "condition": data["weather"][0]["main"],
+        "icon": data["weather"][0]["icon"],
         "city": CITY,
         "time": time.strftime("%I:%M %p")
     }
