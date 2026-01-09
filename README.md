@@ -21,7 +21,8 @@ The dashboard consists of:
 ---
 
 ## Folder Structure
-desk-dashboard/
+```text
+desk-dashboard/ 
 ├─ backend/
 │ └─ main.py # FastAPI backend
 ├─ frontend/
@@ -30,7 +31,7 @@ desk-dashboard/
 │ └─ styles.css # Dark theme styling
 ├─ README.md
 └─ requirements.txt
-
+```
 ---
 
 ## Prerequisites
