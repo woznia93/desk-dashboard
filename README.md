@@ -58,7 +58,7 @@ desk-dashboard/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/desk-dashboard.git
+git clone https://github.com/woznia93/desk-dashboard.git
 cd desk-dashboard
 ```
 
