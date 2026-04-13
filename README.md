@@ -59,7 +59,7 @@ cd desk-dashboard
 python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3. Set your OpenWeatherMap API key
