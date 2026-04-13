@@ -9,7 +9,7 @@ async function updateWeather() {
         }
     catch (err) {
            console.error("Fetch error:", err);
-           document.getElementById("temp").inner.Text = "--°";
+           document.getElementById("temp").innerText = "--°";
            document.getElementById("condition").innerText = "N/A";
 	   document.getElementById("clock").innerText = "--:--";
         }
