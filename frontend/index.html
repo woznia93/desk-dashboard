@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Desk Dashboard</title>
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-
+  <meta charset="UTF-8" />
+  <title>Desk Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
   <div class="container">
-    <div class="clock" id="clock"></div>
-    <div class="weather">
-      <div class="temp" id="temp"></div>
-      <div class="condition" id="condition"></div>
+
+    <div class="left-panel">
+      <div class="clock" id="clock"></div>
+      <div class="weather">
+        <div class="temp" id="temp"></div>
+        <div class="condition" id="condition"></div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+
+      <div class="calendar-header">
+        <div class="today-date" id="today-date"></div>
+        <div class="view-tabs">
+          <button class="tab active" id="tab-day"   onclick="setView('day')">Day</button>
+          <button class="tab"        id="tab-week"  onclick="setView('week')">Week</button>
+          <button class="tab"        id="tab-month" onclick="setView('month')">Month</button>
+        </div>
+      </div>
+
+      <!-- Day View -->
+      <div id="day-view" class="cal-view">
+        <div id="day-events-list"></div>
+        <button class="add-btn" onclick="openAddModal()">+ Add Event</button>
+      </div>
+
+      <!-- Week View -->
+      <div id="week-view" class="cal-view hidden">
+        <div id="week-days"></div>
+        <button class="add-btn" onclick="openAddModal()">+ Add Event</button>
+      </div>
+
+      <!-- Month View -->
+      <div id="month-view" class="cal-view hidden">
+        <div class="month-nav">
+          <button onclick="changeMonth(-1)">&#8249;</button>
+          <span id="month-label"></span>
+          <button onclick="changeMonth(1)">&#8250;</button>
+        </div>
+        <div id="month-grid"></div>
+        <div class="selected-day-events hidden" id="selected-day-events">
+          <div class="section-title" id="selected-day-label"></div>
+          <div id="selected-day-list"></div>
+        </div>
+        <button class="add-btn" onclick="openAddModal()">+ Add Event</button>
+      </div>
+
     </div>
   </div>
+
+  <!-- Add Event Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h3>Add Event</h3>
+      <input type="text" id="event-title" placeholder="Event title" />
+      <input type="datetime-local" id="event-datetime" />
+      <div class="modal-buttons">
+        <button onclick="submitEvent()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
-  </body>
+</body>
 </html>
