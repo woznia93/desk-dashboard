@@ -44,7 +44,7 @@ def get_weather():
 def load_events():
 	if not EVENTS_FILE.exists():
 		EVENTS_FILE.write_text("[]")
-	return json.loads(EVENTS_FIlE.read_text())
+	return json.loads(EVENTS_FILE.read_text())
 
 def save_events(events):
 	EVENTS_FILE.write_text(json.dumps(events, indent=2))
