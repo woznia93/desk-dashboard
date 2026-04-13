@@ -51,6 +51,7 @@ desk-dashboard/
 ```bash
 git clone https://github.com/yourusername/desk-dashboard.git
 cd desk-dashboard
+* make sure start.sh is chmod +x so it is executable * 
 ```
 
 ### 2. Setup Python virtual enviroment for backend
