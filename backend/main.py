@@ -13,7 +13,7 @@ if not API_KEY:
 
 CITY = "Lansing"
 UNITS = "imperial"
-EVENTS_FILE = Path("events.json")
+EVENTS_FILE = Path("/home/brady/desk-dashboard/events.json")
 
 app = FastAPI()
 
