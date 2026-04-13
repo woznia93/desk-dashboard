@@ -16,4 +16,15 @@ python3 -m http.server 3000 &
 
 # Wait and launch browser
 sleep 8
-chromium-browser http://localhost:3000 --kiosk --incognito --noerrdialogs --disable-infobars
+
+# Launch Chromium fullscreen with no tabs/borders
+DISPLAY=:0 chromium-browser http://localhost:3000 \
+  --kiosk \
+  --noerrdialogs \
+  --disable-infobars \
+  --disable-session-crashed-bubble \
+  --disable-restore-session-state \
+  --no-first-run \
+  --incognito \
+  --start-fullscreen \
+  --window-position=0,0
